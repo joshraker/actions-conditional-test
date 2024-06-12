@@ -23,7 +23,7 @@ jobs:
   no-failure:
     runs-on: ubuntu-latest
     needs: [failure]
-    if: ${{ needs.failure.conclusion == 'failure' }}
+    if: ${{ needs.failure.result == 'failure' }}
     steps:
       - run: echo 'No failure() needed!'
   with-failure:
