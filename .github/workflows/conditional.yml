@@ -5,17 +5,17 @@ on:
 
 jobs:
   failure:
-    runs-on: ubuntu@latest
+    runs-on: ubuntu-latest
     steps:
       - run: exit 1
   no-always:
-    runs-on: ubuntu@latest
+    runs-on: ubuntu-latest
     needs: [failure]
     if: ${{ true }}
     steps:
       - run: echo 'No always needed!'
   always:
-    runs-on: ubuntu@latest
+    runs-on: ubuntu-latest
     needs: [failure]
     if: ${{ always() && true }}
     steps:
